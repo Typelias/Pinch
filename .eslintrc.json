@@ -32,7 +32,7 @@
         ],
         "handle-callback-err": "off",
         "indent": [
-            "error",
+            "off",
             4
         ],
         "max-nested-callbacks": [

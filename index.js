@@ -67,6 +67,7 @@ const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
     console.log('Ready!');
+    client.queue = new Map();
     client.user.setStatus('online');
     client.user.setPresence({
         status: 'online',
@@ -86,8 +87,6 @@ client.on('message', message => {
 
     const command = client.commands.get(commandName)
         || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
-
-    console.log(command);
 
     if (!command) return;
 
