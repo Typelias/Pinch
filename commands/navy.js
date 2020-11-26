@@ -29,7 +29,7 @@ module.exports = {
 
         const song = {
             title: 'Navy Seal LTT ',
-            url: 'Sounds/nice.mp3',
+            url: 'Sounds/navy.mp3',
             duration: '90',
         };
 
