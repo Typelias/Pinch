@@ -63,6 +63,7 @@ module.exports = {
         else {
             try {
                 const results = await yt.searchVideos(search, 1);
+                console.log(results);
                 songInfo = await ytdl.getInfo(results[0].url);
                 song = {
                     title: songInfo.videoDetails.title,
