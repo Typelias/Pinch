@@ -1,4 +1,5 @@
 const ytdlDiscord = require('ytdl-core-discord');
+const ytdl = require('discord-ytdl-core');
 const { canModifyQueue } = require('./pinch-util');
 const fs = require('fs');
 const { resolve } = require('path');
@@ -26,7 +27,7 @@ module.exports = {
 
         try {
             if (song.url.includes('youtube.com')) {
-                stream = await ytdlDiscord(song.url, { highWaterMark: 1 << 25 });
+                stream = await ytdl(song.url, { filter: "audioonly", opusEncoded: true, encoderArgs: ['-af', 'bass=g=10,dynaudnorm=f=200']});
             }
             else if (song.url.includes('.mp3')) {
                 stream = fs.createReadStream(song.url);
